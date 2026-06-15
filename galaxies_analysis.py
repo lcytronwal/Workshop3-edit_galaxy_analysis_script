@@ -1,15 +1,17 @@
+# import statements
 # import libraries, modules, and functions here:
 import pandas 
 import matplotlib.pyplot as plt
+import numpy as np
+#We should move these import statements to the "beginning" of our code
 from astropy.cosmology import FlatLambdaCDM 
 import astropy.units as un
-import numpy as np
 
 cosmo = FlatLambdaCDM(H0=70 * un.km / un.s / un.Mpc, Tcmb0=2.725 * un.K, Om0=0.3)
 
 def print_stats(data_column):
     '''
-    prints out the minimum, maximum, and median 
+    prints out the minimum, maximum, median, and mean
     values of a pandas data frame column.
     
     Parameters:
@@ -25,6 +27,7 @@ def print_stats(data_column):
     print(f"The minimum is {data_column.min()}")
     print(f"The maximum is {data_column.max()}")
     print(f"The median is {data_column.median()}")
+    print(f"The mean is {data_column.mean()}")
     
 def plot_histogram(data_column, plot_title, x_label):
     '''
@@ -76,8 +79,9 @@ def convert_redshift_to_distance(galaxy_redshifts): #this function needs redshif
     luminosity_distance_pc = luminosity_distance_Mpc*(1e6) #convert from Mpc to parsecs (pc)
     
     luminosity_distance_lightyears = luminosity_distance_pc*lightyears_per_parsec #convert from pc to lightyears
-        
-    return luminosity_distance_lightyears #add a return variable so we can use these distances elsewhere in our code
+    
+    return luminosity_distance_lightyears
+
 
 def plot_scatter(data_column_x, data_column_y, plot_title, x_label, y_label):
     '''
@@ -107,11 +111,10 @@ def plot_scatter(data_column_x, data_column_y, plot_title, x_label, y_label):
     plt.ylabel(y_label)
     
     plt.show()
-    
+
 file_names = ['Data/Random-SF-Galaxies-PortsmouthGroup_properties.csv',
               'Data/Random-SB-Galaxies-PortsmouthGroup_properties.csv', 
               'Data/Random-AGN-Galaxies-PortsmouthGroup_properties.csv']
-
 # your code here
 for file in file_names:
     print('file name = ', file)
@@ -163,5 +166,3 @@ for file in file_names:
 
     print('Displaying the filtered logSFR vs log10 of distance...')
     plot_scatter(filtered_log_distances, filtered_log_SFRs, 'logSFR vs logDistance', 'logDistance (lightyears)', 'log SFR (Solar Mass/year)')
-
-    print('==================================================')
