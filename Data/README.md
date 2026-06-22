@@ -1,6 +1,6 @@
 # Data Directory
 
-This directory contains galaxy property datasets from the Portsmouth Group, used for analyzing and exploring galaxy classifications and properties.
+This directory contains galaxy property datasets from the Portsmouth Group, used for analyzing and exploring galaxy classifications and properties. For more information, see https://www.sdss4.org/dr17/spectro/galaxy_portsmouth/
 
 ## Files
 
