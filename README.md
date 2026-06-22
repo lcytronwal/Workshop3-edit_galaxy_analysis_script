@@ -1,6 +1,6 @@
 # Galaxies_analysis.py
 ## This repository is for practicing a GitHub version control workflow on a python script for reading in and exploring a table of galaxy properties.
-## Instalation Instructions and Required Packages
+## Installation Instructions and Required Packages
 The code requires python 3 or later
 Requires packages pandas, matplotlib, astrophy.cosmology (FlatLamdaCDM), astrophy.units, and numpy
 ## Usage
